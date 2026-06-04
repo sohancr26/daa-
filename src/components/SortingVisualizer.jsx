@@ -34,6 +34,7 @@ export default function SortingVisualizer({
   const [currentStep, setCurrentStep] = useState(null);
   const [isDone, setIsDone] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
+  const [totalSteps, setTotalSteps] = useState(1);
 
   const stepsRef = useRef([]);
   const stepIndexRef = useRef(0);
@@ -70,6 +71,7 @@ export default function SortingVisualizer({
 
     const { steps, comparisons, swaps } = generator(array);
     stepsRef.current = steps;
+    setTotalSteps(steps.length);
     startTimeRef.current = performance.now();
 
     for (let i = 0; i < steps.length; i++) {
@@ -142,11 +144,11 @@ export default function SortingVisualizer({
       </div>
 
       {/* Progress */}
-      {isRunning && stepsRef.current.length > 0 && (
+      {isRunning && (
         <div className="absolute top-0 left-0 right-0 h-0.5 bg-slate-700 z-20">
           <div
             className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all"
-            style={{ width: `${(stepIndex / Math.max(stepsRef.current.length - 1, 1)) * 100}%` }}
+            style={{ width: `${(stepIndex / Math.max(totalSteps - 1, 1)) * 100}%` }}
           />
         </div>
       )}
