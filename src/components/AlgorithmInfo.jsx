@@ -34,6 +34,25 @@ export default function AlgorithmInfo({ darkMode, algorithm }) {
             </p>
           </div>
 
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+            <div className={`p-3 rounded-xl border ${darkMode ? 'bg-dark-800/50 border-dark-700' : 'bg-slate-50 border-slate-200'}`}>
+              <div className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Best Case</div>
+              <div className={`font-mono text-sm font-bold ${darkMode ? 'text-emerald-400' : 'text-emerald-600'}`}>{info.best}</div>
+            </div>
+            <div className={`p-3 rounded-xl border ${darkMode ? 'bg-dark-800/50 border-dark-700' : 'bg-slate-50 border-slate-200'}`}>
+              <div className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Average Case</div>
+              <div className={`font-mono text-sm font-bold ${darkMode ? 'text-amber-400' : 'text-amber-600'}`}>{info.average}</div>
+            </div>
+            <div className={`p-3 rounded-xl border ${darkMode ? 'bg-dark-800/50 border-dark-700' : 'bg-slate-50 border-slate-200'}`}>
+              <div className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Worst Case</div>
+              <div className={`font-mono text-sm font-bold ${darkMode ? 'text-red-400' : 'text-red-600'}`}>{info.worst}</div>
+            </div>
+            <div className={`p-3 rounded-xl border ${darkMode ? 'bg-dark-800/50 border-dark-700' : 'bg-slate-50 border-slate-200'}`}>
+              <div className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Space Complexity</div>
+              <div className={`font-mono text-sm font-bold ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>{info.space}</div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <h4 className={`text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-2 ${darkMode ? 'text-emerald-400' : 'text-emerald-600'}`}>
